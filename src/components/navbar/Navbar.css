@@ -1,0 +1,37 @@
+.navbar {
+  overflow: hidden;
+  background-color: inherit;
+  text-align: right;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  box-shadow: 1px 6px 2px -3px rgb(158, 158, 158);
+}
+
+.navbar a {
+  float: right;
+  font-size: 20px;
+  color: black;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 30px;
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid rgb(33, 160, 245);
+}
+
+.navbar a#hjem {
+  font-weight: 900;
+}
+
+.navbar img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
