@@ -17,6 +17,7 @@ const App = ({ challenges }) => {
               <p>{challenge.name}</p>
               <p>{moment(challenge.date.seconds * 1000).format('l')}</p>
               <p>{challenge.comment}</p>
+              <p>halla</p>
             </div>
           )
         })}
