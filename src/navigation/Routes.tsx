@@ -9,10 +9,10 @@ interface RoutesProps {}
 const Routes: React.FC<RoutesProps> = () => {
   return (
     <Switch>
-      <Route path="/login">
+      <Route path='/login'>
         <Login />
       </Route>
-      <Route path="/">
+      <Route path='/'>
         <App />
       </Route>
     </Switch>
