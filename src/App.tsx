@@ -9,11 +9,11 @@ import moment from 'moment'
 const App = ({ challenges }) => {
   console.log(challenges)
   return (
-    <div>
+    <div className='challenge-container'>
       {challenges &&
         challenges.map(challenge => {
           return (
-            <div key={challenge.id}>
+            <div key={challenge.id} className='challenge'>
               <p>{challenge.name}</p>
               <p>{moment(challenge.date.seconds * 1000).format('l')}</p>
               <p>{challenge.comment}</p>
