@@ -1,13 +1,1 @@
-.challenge {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  width: 90%;
-  margin-top: 20px;
-  border-radius: 8px;
-}
 
-.challenge-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
