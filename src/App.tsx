@@ -6,7 +6,12 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 import ChallengeList from './components/challenge/ChallengeList'
 const App = ({ challenges }) => {
-  return <ChallengeList challenges={challenges}></ChallengeList>
+  return (
+    <div>
+      <h1>Siste spill</h1>
+      <ChallengeList challenges={challenges}></ChallengeList>
+    </div>
+  )
 }
 export default compose(
   firestoreConnect(() => ['challenges']),
