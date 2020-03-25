@@ -1,0 +1,64 @@
+.challenge {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.challenge img {
+    width: 70px;
+    margin-left: 15px;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.tags {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tags p {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 8px;
+    padding: 6px;
+    width: 6rem;
+    height: auto;
+    text-align: center;
+    color: white;
+    font-size: 17;
+    font-weight: bolder;
+}
+
+.tags .sport {
+    background: #e01050;
+}
+
+.tags .kodd {
+    background: #1090e0;
+}
+
+.tekst {
+    flex: 1;
+}
+
+.navn {
+    font-weight: 900;
+}
+
+.dato {
+    font-weight: 200 !important;
+    font-size: 14px;
+    margin-left: 10px;
+}
