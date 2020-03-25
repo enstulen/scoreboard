@@ -4,24 +4,9 @@ import './App.css'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
-import moment from 'moment'
-
+import ChallengeList from './components/challenge/ChallengeList'
 const App = ({ challenges }) => {
-  console.log(challenges)
-  return (
-    <div className='challenge-container'>
-      {challenges &&
-        challenges.map(challenge => {
-          return (
-            <div key={challenge.id} className='challenge'>
-              <p>{challenge.name}</p>
-              <p>{moment(challenge.date.seconds * 1000).format('l')}</p>
-              <p>{challenge.comment}</p>
-            </div>
-          )
-        })}
-    </div>
-  )
+  return <ChallengeList challenges={challenges}></ChallengeList>
 }
 export default compose(
   firestoreConnect(() => ['challenges']),
