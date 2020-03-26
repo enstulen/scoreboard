@@ -25,8 +25,9 @@ const Challenge = ({ challenge }: ChallengeProps) => {
         <p>{challenge.comment}</p>
       </div>
       <div className='tags'>
-        <p className='sport'>Sport</p>
-        <p className='kodd'> Kødd</p>
+        {challenge.tags.map(tag => (
+          <p style={{ backgroundColor: tag.color }}>{tag.name}</p>
+        ))}
       </div>
     </div>
   )

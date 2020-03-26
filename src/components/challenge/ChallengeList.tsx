@@ -11,7 +11,9 @@ const ChallengeList = ({ challenges }: ChallengeListProps) => {
     <div className='challenge-container'>
       {challenges &&
         challenges.map(challenge => {
-          return <Challenge challenge={challenge}></Challenge>
+          return (
+            <Challenge challenge={challenge} key={challenge.id}></Challenge>
+          )
         })}
     </div>
   )
