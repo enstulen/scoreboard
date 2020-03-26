@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { useFirestore, firestoreConnect } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { ReduxState, TagObject } from '../../shared/Types'
+import { ReduxState, TagObject, UserObject } from '../../shared/Types'
 
 interface RegisterChallengeProps {
   tags: Array<TagObject>
+  users: Array<UserObject>
 }
 
-const RegisterChallenge = ({ tags }: RegisterChallengeProps) => {
+const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
   const firestore = useFirestore()
   const [name, setName] = useState('')
   const [date, setDate] = useState()
@@ -19,18 +20,22 @@ const RegisterChallenge = ({ tags }: RegisterChallengeProps) => {
     name: string,
     date: Date,
     comment: string,
-    tags: Array<TagObject>
+    tags: Array<TagObject>,
+    user: UserObject
   ) => {
-    firestore.collection('challenges').add({ name, date, comment, tags })
+    firestore.collection('challenges').add({ name, date, comment, tags, user })
   }
 
   console.log(tags)
+  console.log(users)
+
   return <div></div>
 }
 
 export default compose(
-  firestoreConnect(() => ['tags']),
+  firestoreConnect(() => ['tags', 'users']),
   connect((state: ReduxState) => ({
-    tags: state.firestore.ordered.tags
+    tags: state.firestore.ordered.tags,
+    users: state.firestore.ordered.users
   }))
 )(RegisterChallenge)

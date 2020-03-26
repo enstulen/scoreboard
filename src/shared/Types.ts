@@ -1,3 +1,5 @@
+import { User } from 'firebase'
+
 export interface ChallengeObject {
   id: string
   name: string
@@ -13,12 +15,16 @@ export interface TagObject {
   name: string
   color: string
 }
-
+export interface UserObject {
+  name: string
+  image: string
+}
 export interface ReduxState {
   firestore: {
     ordered: {
       challenges: Array<ChallengeObject>
       tags: Array<TagObject>
+      users: Array<User>
     }
   }
 }
