@@ -6,12 +6,14 @@ export interface ChallengeObject {
   date: FirebaseDate
   comment: string
   tags: Array<TagObject>
+  user: UserObject
 }
 export interface FirebaseDate {
   seconds: number
   nanoseconds: number
 }
 export interface TagObject {
+  id: string
   name: string
   color: string
 }

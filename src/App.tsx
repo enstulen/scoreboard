@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { convertToArrayOfObjects } from './shared/Utils'
 import ChallengeList from './components/challenge/ChallengeList'
 import { ReduxState } from './shared/Types'
+import Stats from './pages/stats/Stats'
 
 const App = ({ challenges }) => {
   return (
@@ -14,6 +15,7 @@ const App = ({ challenges }) => {
       <ChallengeList
         challenges={convertToArrayOfObjects(challenges)}
       ></ChallengeList>
+      <Stats> </Stats>
     </div>
   )
 }
