@@ -2,7 +2,6 @@ import React from 'react'
 import { ChallengeObject } from '../../shared/Types'
 import moment from 'moment'
 import './Challenge.css'
-import morten from '../../assets/icons/morten.png'
 
 interface ChallengeProps {
   challenge: ChallengeObject
@@ -11,7 +10,7 @@ interface ChallengeProps {
 const Challenge = ({ challenge }: ChallengeProps) => {
   return (
     <div key={challenge.id} className='challenge'>
-      <img src={morten} alt='' className='bilde' />
+      <img src={challenge.user.image} alt='' className='bilde' />
       <div className='tekst'>
         <div className='navn'>
           <p>
