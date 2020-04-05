@@ -38,7 +38,11 @@ const Stats2 = ({ users }: StatsProps) => {
     >
       <CartesianGrid strokeDasharray='3 3' />
       <XAxis dataKey='name' />
-      <YAxis dataKey='antSeiere' />
+      <YAxis
+        dataKey='antSeiere'
+        label={{ value: 'Antall seiere', angle: -90, position: 'insideLeft' }}
+      />
+      />
       <Tooltip />
       <Legend />
       <Bar dataKey='antSeiere' fill='white'>
