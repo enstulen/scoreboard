@@ -21,6 +21,7 @@ export interface UserObject {
   id: string
   name: string
   image: string
+  winCount: number
 }
 export interface ReduxState {
   firestore: {
