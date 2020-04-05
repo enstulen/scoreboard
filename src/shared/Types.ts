@@ -18,6 +18,7 @@ export interface TagObject {
   color: string
 }
 export interface UserObject {
+  id: string
   name: string
   image: string
 }
