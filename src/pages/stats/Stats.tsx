@@ -1,7 +1,6 @@
 import React from 'react'
-import { PieChart, Pie, Tooltip } from 'recharts'
+import { PieChart, Pie, Tooltip, Cell } from 'recharts'
 import { UserObject } from '../../shared/Types'
-import { useStore } from 'react-redux'
 import './Stats.css'
 
 interface StatsProps {
@@ -20,7 +19,7 @@ const Stats = ({ users }: StatsProps) => {
       return { name: user.name, value: user.winCount }
     })
 
-  console.log('hei', userData)
+  const COLORS = ['#E01050', '#1090E0', '#10E060']
 
   return (
     <div className='statsContainer'>
@@ -35,7 +34,12 @@ const Stats = ({ users }: StatsProps) => {
           outerRadius={200}
           fill='#8884d8'
           label
-        />
+        >
+          {userData &&
+            userData.map((entry, index) => (
+              <Cell fill={COLORS[index % COLORS.length]} />
+            ))}
+        </Pie>
 
         <Pie
           dataKey='value'
