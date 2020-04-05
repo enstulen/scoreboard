@@ -1,0 +1,15 @@
+#diagram {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.statsContainer {
+    margin-top: 100px;
+    display: row;
+    align-items: center;
+    text-align: center;
+}
+
+svg.recharts-surface {
+    margin-left: 300px;
+}
