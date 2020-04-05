@@ -15,7 +15,7 @@ const App = ({ challenges, users }) => {
       <ChallengeList
         challenges={convertToArrayOfObjects(challenges)}
       ></ChallengeList>
-      <Stats> </Stats>
+      <Stats users={users} />
     </div>
   )
 }
