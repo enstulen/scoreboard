@@ -6,8 +6,7 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
-  Legend
+  Tooltip
 } from 'recharts'
 import { UserObject } from '../../shared/Types'
 
@@ -21,7 +20,6 @@ const Stats2 = ({ users }: StatsProps) => {
       return { name: user.name, antSeiere: user.winCount }
     })
 
-  console.log('hello', userData)
   const COLORS = ['#E01050', '#1090E0', '#10E060']
 
   return (
@@ -44,7 +42,6 @@ const Stats2 = ({ users }: StatsProps) => {
       />
       />
       <Tooltip />
-      <Legend />
       <Bar dataKey='antSeiere' fill='white'>
         {userData &&
           userData.map((entry, index) => (
