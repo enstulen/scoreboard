@@ -7,7 +7,7 @@ import { convertToArrayOfObjects } from './shared/Utils'
 import ChallengeList from './components/challenge/ChallengeList'
 import { ReduxState } from './shared/Types'
 import Stats from './pages/stats/Stats'
-
+import Stats2 from './pages/stats/Stats2'
 const App = ({ challenges, users }) => {
   return (
     <div>
@@ -16,6 +16,7 @@ const App = ({ challenges, users }) => {
         challenges={convertToArrayOfObjects(challenges)}
       ></ChallengeList>
       <Stats users={users} />
+      <Stats2 users={users} />
     </div>
   )
 }
