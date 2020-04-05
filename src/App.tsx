@@ -8,7 +8,7 @@ import ChallengeList from './components/challenge/ChallengeList'
 import { ReduxState } from './shared/Types'
 import Stats from './pages/stats/Stats'
 
-const App = ({ challenges }) => {
+const App = ({ challenges, users }) => {
   return (
     <div>
       <h1>Siste spill</h1>
@@ -31,5 +31,9 @@ export default compose(
   ]),
   connect((state: ReduxState, props) => ({
     challenges: populate(state.firestore, collection, populates)
+  })),
+  firestoreConnect(() => ['users']),
+  connect((state: ReduxState) => ({
+    users: state.firestore.ordered.users
   }))
 )(App)
