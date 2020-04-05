@@ -20,7 +20,7 @@ const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
   const [date, setDate] = useState(new Date())
   const [comment, setComment] = useState('')
   const [selectedtTags, setSelectedTags] = useState([])
-  const [user, setUser] = useState({ name: 'ingen navn oppgitt', image: '' })
+  const [user, setUser] = useState()
 
   const options =
     tags &&
@@ -50,7 +50,7 @@ const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
     createChallenge(name, date, comment, tagsIds, user)
   }
 
-  //Bruk denne funksjonen for å legge til challenge
+  //Må ha ts-ignore siden firestore objektet i biblioteket ikke har FieldValue lagt inn som type
   const createChallenge = (
     name: string,
     date: Date,
@@ -59,6 +59,11 @@ const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
     user: UserObject
   ) => {
     firestore.collection('challenges').add({ name, date, comment, tags, user })
+    firestore
+      .collection('users')
+      .doc(user.id)
+      //@ts-ignore
+      .update('winCount', firestore.FieldValue.increment(1))
   }
 
   console.log(tags)
@@ -70,7 +75,7 @@ const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
       <div className='Regcontainer'>
         <div className='sammeCon'>
           <div className='submissonName'>
-            <p>Navn</p>
+            <p>Navn på challenge</p>
             <input
               type='text'
               id='challegeName'
@@ -80,7 +85,8 @@ const RegisterChallenge = ({ tags, users }: RegisterChallengeProps) => {
           <span className='dato'>
             <p>Dato</p>
             <DatePicker
-              claseName='date'
+              className='date'
+              dateFormat='dd.MM.yyyy'
               selected={date}
               onChange={date => setDate(date)}
             />
